@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="with=device-width,initial-scale=1.0">
+	<title> Vector Tution Point</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+      * {
+        box-sizing: border-box
+      }
+      body {
+        font-family: Verdana, sans-serif;
+        margin: 0
+      }
+      .mySlides1 {
+        display: none
+      }
+      .slideshow-container img {
+		width: 350px;
+		height: 500px;
+		overflow;
+        vertical-align: middle;
+      }
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+	.slideshow-container h1{
+		text-align: center;
+		padding: 30px 0;
+		margin-bottom: 25px;
+		margin-top: 20px;
+		font-weight: 400;
+
+	}
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      /* Caption text */
+      .text {
+        color: #ffffff;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #ffffff;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #999999;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .active,
+      .dot:hover {
+        background-color: #111111;
+      }
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      @-webkit-keyframes fade {
+        from {
+          opacity: .4
+        }
+        to {
+          opacity: 1
+        }
+      }
+      @keyframes fade {
+        from {
+          opacity: .4
+        }
+        to {
+          opacity: 1
+        }
+      }
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 700px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px
+        }
+		.slideshow-container img {
+		width: 70px;
+		height: 250px;
+		overflow;
+        vertical-align: middle;
+      }
+      }
+    </style>
+<head>
+<body>
+	<section class="sub-header">
+		<nav>
+			<a href="index.html"><img src="new/logo2.PNG"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="course.html">COURSE</a></li>
+					<li><a href="blog.html">BLOG</a></li>
+					<li><a href="result.html">RESULT</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	<h1>About Us</h1>
+	</section>
+	
+<!---------------------------- about us content ------------------------------->
+
+<section class ="about-us">
+	<div class="row">
+		<div class="about-col">
+			<h1>We are the Ballia's best couching </h1>
+			<p>>The word "Vector" refers to direct to a desired point founder of Vector Institute,
+				has the flair for teaching and passion to mould a child in the professional field
+				His vision is EDUCATE-GROW-PROSPER-SHINE. After twelve years of rich experience in 
+				India, he came up with the idea of establishing an institute in Ballia in the field 
+				of school to competitive with experienced and dedicated faculties and the result is 
+				Vector Classes -A Knowledge Transformation Institute.</p>
+			<a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+		</div>
+		<div class="about-col">
+			<img src="images/about1.jpg">
+		</div>
+	</div>
+
+
+</section>
+
+<!---------------------------- Gallery ------------------------------->
+	
+
+
+<section>
+<div class="slideshow-container">
+	<h1>  Gallery </h1>
+      <div class="mySlides1 fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="new/celeb_1.jpeg" style="width:100%">
+        <div class="text">London, Ebgland</div>
+      </div>
+      <div class="mySlides1 fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="new/celeb_2.jpeg" style="width:100%">
+        <div class="text">Sunset in Romania</div>
+      </div>
+      <div class="mySlides1 fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="new/celeb_3.jpeg" style="width:100%">
+        <div class="text">New York, USA</div>
+      </div>
+	  <div class="mySlides1 fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="new/celeb_2.jpeg" style="width:100%">
+        <div class="text">New York, USA</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+	  <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+<script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides1");
+        var dots = document.getElementsByClassName("dot");
+        if(n > slides.length) {
+          slideIndex = 1
+        }
+        if(n < 1) {
+          slideIndex = slides.length
+        }
+        for(i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for(i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+</section>
+
+
+<!--------------------------- Footer -------------------------->
+
+<section class="footer">
+	<h4>About Us</h4>
+	<p>The word "Vector" refers to direct to a desired point founder of Vector Institute,
+	has the flair for teaching <br> and passion to mould a child in the professional field.</p>
+	<div class="icons">
+		<i class="fa fa-facebook"></i>
+		<i class="fa fa-twitter"></i>
+		<i class="fa fa-instagram"></i>
+		<i class="fa fa-linkedin"></i>
+	</div>
+	<p>Made with <i class="fa fa-heart-o"></i> by Prateek Rai </p>
+</section>
+
+
+
+
+
+	
+	
+	
+	
+<!-------JavaScript for Toggle Menu (phone) --------------->
+<script>
+	var navLinks = document.getElementById("navLinks");
+	
+	function showMenu(){
+		navLinks.style.right = "0";
+	}
+	
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+	
+</script>	
+	
+</body>
+</html>
