@@ -7,7 +7,7 @@
 .header{
 	min-height:100vh;
 	width:100%;
-	background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.png);
+	background-image:linear-gradient(rgba(9,9,30,0.2),rgba(4,9,30,0.2)),url(new/class1.JPG);
 	background-position:center;
 	background-size:cover;
 	position: relative;
@@ -34,9 +34,9 @@ nav img{
 }
 
 .nav-links ul li a{
-	color: #fff;
+	color: Black;
 	text-decoration: none;
-	font-size: 13px;
+	font-size: 15px;
 }
 
 .nav-links ul li::after{
@@ -252,7 +252,9 @@ p{
 }
 
 .facilities-col img{
-	width: 100%;
+	width: 350px;
+	height: 400px;
+	overflow;
 	border-radius:10px;
 }
 
@@ -269,51 +271,107 @@ p{
 
 /*------------------------ testimonials -----------------*/
 
+
 .testimonials{
-	width: 80%;
 	margin: auto;
-	padding-top: 100px;
+	padding-top: 60px;
+	padding-left: 200px;
+	padding-right: 200px;
 	text-align: center;
 }
-
-.testimonials-col{
-	flex-basis: 44%;
-	border-radius: 10px;
-	margin-bottom: 5%;
-	text-align: left;
-	background: #fff3f3;
-	padding: 25px;
-	cursor: pointer;
-	display: flex;
-}
-
-.testimonials-col img{
-	height: 40px;
-	margin-left: 5px;
-	margin-right: 30px;
-	border-radius: 50%;
-}
-
-.testimonials-col p{
-	padding:0;
-}
-
-.testimonials-col h3{
-	margin-top: 15px;
+.testimonials_row{
 	text-align: left;
 }
+.mySlides {
+		margin-bottom: 5%;
+		background: #fff3f3;
+		padding:40px;
+		text-align: left;
+		height:130px;
+      }
+.mySlides img {
+		height: 40px;
+		margin-left: 5px;
+		margin-right: 30px;
+		margin-top:15px;
+		border-radius: 50%;
+      }
 
-.testimonials-col .fa{
-	color: #f44336;
-}
+      /* Next & previous buttons */
+.prev,
+.next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      /* Position the "next button" to the right */
+.next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      /* Caption text */
+      
+     
+/* The dots/bullets/indicators */
+.dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #999999;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+.active,
+.dot:hover {
+        background-color: #111111;
+      }
+      
+@-webkit-keyframes fade {
+        from {
+          opacity: .4+
+        }
+        to {
+          opacity: 1
+        }
+      }
+@keyframes fade {
+        from {
+          opacity: .4
+        }
+        to {
+          opacity: 1
+        }
+      }
+      /* On smaller screens, decrease text size */
+@media only screen and (max-width: 700px) {
+        .prev,
+        .next,
+		.row1 p{
+		font-size: 14px;
+		}
+		.mySlides {
+		padding:0px;
+		height:350px;
+		width:350px;
+      }
+      }
 
-@media(max-width: 700px){
-	.testimonials-col img{
-		margin-left: opx;
-		margin-right: 15px;
-	}
-	
-}
 
 
 /*------------- Call To Action -------------*/
