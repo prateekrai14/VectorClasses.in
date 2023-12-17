@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slideshow Images</title>
+    <style>
+      .mySlides {
+		margin-bottom: 5%;
+		background: #fff3f3;
+		padding: 25px;
+		height: 120px;
+      }
+      .mySlides img {
+		height: 40px;
+		margin-left: 5px;
+		margin-right: 30px;
+		margin-top:15px;
+		border-radius: 50%;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      /* Caption text */
+      
+     
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #999999;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .active,
+      .dot:hover {
+        background-color: #111111;
+      }
+      
+      @-webkit-keyframes fade {
+        from {
+          opacity: .4+
+        }
+        to {
+          opacity: 1
+        }
+      }
+      @keyframes fade {
+        from {
+          opacity: .4
+        }
+        to {
+          opacity: 1
+        }
+      }
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+  
+	<h1>What Our Student Says</h1>
+	<p>It not just reviews it's our result which help us to build strong.</p>
+	<section class="slideshow-container">
+	<div class="row">
+		<div class="mySlides fade">
+			<img src="images/student12.jpg">
+			<div>
+			<p>जो बनाये हमें इंसान और दे सही, गलत की पहचान ऐसे देश के उन  शिक्षको को हम करते हे हम शत्रू शत्रू प्रणाम </p>
+			<h3>Nisha Gupta</h3>
+
+			</div>
+		</div>
+		<div class="mySlides fade">
+			<img src="images/student12.jpg">
+			<div>
+			<p>In the point of y view this couching is the best couching center in Lakshmanpur and I'm so glad to 
+			be the student of Vector classes.Dheeraj and Niraj sir you both are best teacher for me</p>
+			<h3>Akansha Sahani</h3>
+
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="mySlides fade">
+			<img src="images/student12.jpg">
+			<div>
+			<p>मेरे इस कोचिंग मे 2 साल केसे निकल गये मुझे पता ही नहीं चला |
+			गुरु के बिना ज्ञान नहीं| 
+			Miss you sir</p>
+			<h3>Anisha Patel</h3>
+
+			</div>
+		</div>
+		<div class="mySlides fade">
+			<img src="images/student12.jpg">
+			<div>
+			<p>मै सबसे पहले यह कहना चाहती हूँ कि इस क्षेत्र मे सबसे best Coching vector Classes है <br> Dhiraj Sit Aap है  Mere सबसे Best teacher मैने यहाँ मन से ही नही दिल से बढ़ा है| 
+			Niraj Sir इस क्षेत्र के best chemistry teacher hai Dheeray Sir I really miss you आप आपको बहुत miss करूंगी। <br>
+			बहुत अच्च्दै है क्योंकि आपने हमे शिक्षा ही नही संस्कार भी दिये है आप मेरे लिए दुनियाँ के best Sir hai</p>
+			<h3>Anjali Siroya</h3>
+			
+			</div>
+		</div>
+	</div>
+	<div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+	  <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+</section>
+
+<script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if(n > slides.length) {
+          slideIndex = 1
+        }
+        if(n < 1) {
+          slideIndex = slides.length
+        }
+        for(i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for(i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "flex";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
