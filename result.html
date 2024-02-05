@@ -94,11 +94,11 @@
 	
 	<section>
     <div class="search-container">
-        <label for="Name">Enter Name:</label>
+        <label for="Name">Enter Name : </label>
         <input type="text" id="Name" placeholder="Name">
 		
 		<label for="Roll Number">Enter Roll Number : </label>
-		<input type="text" id="FatherName" placeholder="Roll number">
+		<input type="text" id="rollNumber" placeholder="Roll number">
 	
         <button onclick="searchImage()">Result</button>
     </div>
@@ -107,8 +107,8 @@
     <script>
         function searchImage() {
     const Name = document.getElementById('Name').value;
-    const FatherName = document.getElementById('FatherName').value;
-    const imageName = Name + '_' + FatherName;
+    const rollNumber = document.getElementById('rollNumber').value;
+    const imageName = Name + '_' + rollNumber;
 
     const imageContainer = document.getElementById('imageContainer');
     console.log("searching for image: " + imageName);
@@ -118,7 +118,7 @@
     let imageURL = null;
     for (const extension of extensions) {
         const img = new Image();
-        const url = `images/${imageName}.${extension}?${new Date().getTime()}`;
+        const url = `certificate/${imageName}.${extension}?${new Date().getTime()}`;
         img.src = url;
         img.onload = function() {
             // Image exists with this extension, use this URL
