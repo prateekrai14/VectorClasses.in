@@ -94,8 +94,10 @@
 	
 	<section>
     <div class="search-container">
+        <!--        
         <label for="Name">Enter Name : </label>
         <input type="text" id="Name" placeholder="Name">
+        -->
 		
 		<label for="Roll Number">Enter Roll Number : </label>
 		<input type="text" id="rollNumber" placeholder="Roll number">
@@ -106,24 +108,26 @@
 
     <script>
         function searchImage() {
-    const Name = document.getElementById('Name').value.toLowerCase();
+    <!-- const Name = document.getElementById('Name').value.toLowerCase();
+         const imageName = Name + '_' + rollNumber;
+     -->
     const rollNumber = document.getElementById('rollNumber').value;
-    const imageName = Name + '_' + rollNumber;
+    
 
     const imageContainer = document.getElementById('imageContainer');
-    console.log("searching for image: " + imageName);
+    console.log("searching for image: " + rollNumber);
 
     // Search for image with different extensions
     const extensions = ['jpeg', 'jpg', 'png','JPG','PNG','JPEG','pdf','PDF'];
     let imageURL = null;
     for (const extension of extensions) {
         const img = new Image();
-        const url = `certificate/${imageName}.${extension}?${new Date().getTime()}`;
+        const url = `certificate/${rollNumber}.${extension}?${new Date().getTime()}`;
         img.src = url;
         img.onload = function() {
             // Image exists with this extension, use this URL
             imageURL = url;
-            displayImage(imageURL, imageName, imageContainer);
+            displayImage(imageURL, rollNumber, imageContainer);
         };
         img.onerror = function() {
             // Image does not exist with this extension, try the next one
