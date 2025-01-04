@@ -126,6 +126,135 @@ nav .fa{
 	}
 }
 
+
+/*---------------------- campus------------------- */
+
+.main-section{
+padding-bottom:500px;}
+
+.container{
+	width:80%;
+	margin: auto;
+	text-align: center;
+	margin-top: 80px; 
+}
+
+
+
+
+.event{
+	flex-basis: 31%;
+	background: #fff3f3;
+	border-radius: 10px;
+    text-align:left;
+	padding: 20px 12px;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+
+
+.layer{
+	background: transparent;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition:0.5s;
+}
+
+
+.layer:hover{
+	background: rgba(226,0,0,0.7)
+}
+
+.layer h3{
+	width: 100%;
+	font-weight: 500;
+	color: #fff;
+	font-size: 26px;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+	position : absolute;
+	opacity:0;
+	transition: 0.5s;
+}
+.layer:hover h3{
+	bottom: 49%;
+	opacity: 1;
+} 
+.scroll-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.scroll-container img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.scroll-container li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left; /* Align list items to the left */
+}
+
+.scroll-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    padding-right: 15px; /* Avoid scrollbars */
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 10s linear infinite;
+}
+
+
+
+
+
+@media(max-width: 700px){
+	.scroll-container{
+		flex-direction: column;
+	}
+    
+     /* Reduce scroll container height on mobile devices */
+    .scroll-container {
+        height: 650px;
+    }
+    
+    .scroll-container li {
+    font-size: 13.5px;
+    margin-bottom: 0px;
+    color: #333;
+    text-align: left; /* Align list items to the left */
+    }
+    
+    .container {
+        width: 100%; /* Full width on mobile */
+    }
+
+    
+    .main-section{
+        padding-bottom:0px;
+    }
+
+    /* Adjust text size for mobile view */
+    .event {
+        padding: 15px;
+        height:550px;
+    }
+
+}
+
+
+
+
+
 /*--------course-------------*/
 
 .course{
@@ -133,10 +262,13 @@ nav .fa{
 	margin: auto;
 	text-align: center;
 	padding-top: 100px;
+   
+    
 }
 h1{
 	font-size: 36px;
 	font-weight: 600;
+    
 }
 p{
 	color: #777;
@@ -173,65 +305,14 @@ p{
 	.row{
 		flex-direction: column;
 	}
+    
+    .course{
+	padding-top: 50px;
+   
+    
+}
 	
 }
-
-/*---------------------- campus------------------- */
-.campus{
-	width: 8-%;
-	margin: auto;
-	text-align: center;
-	padding-top: 50px;
-	padding-left : 120px;
-}
-
-
-.campus-col{
-	flex-basis: 32%;
-	border-radius: 10px;
-	margin-bottom: 30px;
-	position: relative;
-	overflow: hidden;
-}
-
-.campus-col img {
-	width: 80%;
-	display: block;
-}
-
-.layer{
-	background: transparent;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition:0.5s;
-}
-
-
-.layer:hover{
-	background: rgba(226,0,0,0.7)
-}
-
-.layer h3{
-	width: 100%;
-	font-weight: 500;
-	color: #fff;
-	font-size: 26px;
-	bottom: 0;
-	left: 50%;
-	transform: translate(-50%);
-	position : absolute;
-	opacity:0;
-	transition: 0.5s;
-}
-.layer:hover h3{
-	bottom: 49%;
-	opacity: 1;
-
-} 
-
 
 
 
@@ -267,6 +348,16 @@ p{
 	margin-bottom:15px;
 	text-align: left;
 	
+}
+
+@media(max-width: 700px){
+
+    .facilities-col img{
+	        width: 250px;
+	        height: 300px;
+	        overflow;
+	        border-radius:10px;
+        }
 }
 
 /*------------------------ testimonials -----------------*/
@@ -368,7 +459,7 @@ p{
 		.mySlides {
 		padding:0px;
 		height:350px;
-		width:350px;
+		width:250px;
       }
       }
 
@@ -610,4 +701,100 @@ p{
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
+
+
+/********* Campus, Events and Notice Board section CSS Starts **********/
+.event {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  width: 32%;
+  float: right;
+  background-color: #fff;
+  padding-bottom: 50px;
+  text-align: center;
+  margin-right:1%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom:10px;
+}
+
+.event:last-child {
+  margin-right:0;
+}
+.event .heading {
+  border-bottom: 1px solid #46b7c1;
+  padding: 5px;
+  color: #fff;
+  background: #46b7c1;
+  text-align: center;
+  font-weight:bold;
+}
+
+.event ul{
+    padding:0;
+    margin:-0;
+    }
+.event ul li img{
+    margin-left:10px;
+}
+
+.event ul li {
+  margin-bottom: 20px;
+  width: 100%;
+  float: left;
+  list-style: none;
+}
+.event ul li:hover{
+    background-color:#f0f8ff;
+    transition:background-color 0.3s ease;
+}
+
+.event ul li:focus{
+    outline: 2px solid #46b7c1;
+    background-color:#e0f7fa
+}
+.event-date {
+  background: #46b7c1;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  padding: 8px 12px;
+  margin-right: 10px;
+  display:inline-block;
+}
+
+@media(max-width: 768px){
+
+    .event {
+        width:100%;
+        float:none;
+    }
+	
+}
+
+/********* Campus, Events and Notice Board section CSS End **********/
+
+
+/********** School Info, Award and Certificate CSS Starts **********/  
+        .award p {
+          width: 100%;
+          float: left;
+          font-size: 16px;
+        }
+        .award img {
+          width: 100%;
+        }
+        .award b {
+          min-width: 115px;
+          float: left;
+          margin-bottom: 20px;
+        }
+        .award h3 {
+          font-size: 23px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+/********** School Info, Award and Certificate CSS Ends **********/
 
