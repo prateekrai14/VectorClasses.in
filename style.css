@@ -202,7 +202,7 @@ padding-bottom:500px;}
 
 .scroll-container {
     position: relative;
-    height: 400px;
+    height: 450px;
     overflow: hidden;
     padding-right: 15px; /* Avoid scrollbars */
 }
