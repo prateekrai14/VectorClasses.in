@@ -798,3 +798,161 @@ p{
         }
 /********** School Info, Award and Certificate CSS Ends **********/
 
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    margin-top: 20px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    word-wrap: break-word; /* Allow text wrapping */
+    white-space: normal;  /* Allow content to wrap and adjust height of rows */
+}
+
+th {
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status Colors */
+td:nth-child(4) {
+    font-weight: bold;
+}
+
+td:nth-child(4):contains('Active') {
+    color: green;
+}
+
+td:nth-child(4):contains('Completed') {
+    color: gray;
+}
+
+/* Table Wrapper for scrolling */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    #searchInput {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    table {
+        width: 100%;
+        table-layout: fixed; /* Ensure all columns are visible */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    #searchInput {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    /* Ensure no vertical stacking on small devices, keep horizontal scroll */
+    .table-wrapper {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+        white-space: normal; /* Allow text to wrap */
+    }
+
+    th, td {
+        display: table-cell; /* Ensure it remains in the table cell layout */
+    }
+}
+
