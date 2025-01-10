@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrolled Students</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="new/logo2.png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Vector Classes</title>
+    <link rel="icon" type="image/x-icon" href="new/logo2.png">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3602636137508784"
+        crossorigin="anonymous"></script>
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="new/logo2.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="enroll.html">ENROLL STUDENT </a></li>
+                    <li><a href="result.html">RESULT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <div class="container">
+        <header>
+            <h1>Enrolled Students</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by Name or Course" onkeyup="searchStudents()">
+            </div>
+        </header>
+
+        <section class="table-wrapper">
+            <div class="table-container">
+                <table id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Name</th>
+                            <th onclick="sortTable(1)">Father Name</th>
+                            <th onclick="sortTable(2)">Course</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Your rows here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be inserted here dynamically -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+    const students = [
+    { name: "Abhishek", fatherName: "Dinesh Gond", course: "ADCA", status: "Running" },
+    { name: "Akriti Bharti", fatherName: "Pawan Kumar", course: "ADCA", status: "Done" },
+    { name: "Akriti Gupta", fatherName: "Kuber Prasad Gupta", course: "Basic", status: "Done" },
+    { name: "Alok Kumar", fatherName: "Shyam Lal", course: "ADCA", status: "Running" },
+    { name: "Alok Singh", fatherName: "Akhilesh Kumar Singh", course: "ADCA", status: "Done" },
+    { name: "Aman Kumar", fatherName: "Foal Chand Ram", course: "ADCA", status: "Running" },
+    { name: "Anamika", fatherName: "Shivanand Ram", course: "Basic", status: "Done" },
+    { name: "Anmal", fatherName: "Dharmdev Prasad", course: "ADCA", status: "Done" },
+    { name: "Anjana Singh", fatherName: "Sanjay Singh", course: "ADCA", status: "Done" },
+    { name: "Anjali", fatherName: "Munna Ram", course: "ADCA", status: "Running" },
+    { name: "Ankit Kumar Singh", fatherName: "Anil Singh", course: "ADCA", status: "Running" },
+    { name: "Anup Kumar", fatherName: "Bharat Prasad Gond", course: "ADCA", status: "Done" },
+    { name: "Anjali Kumari", fatherName: "Virendra Ram", course: "ADCA", status: "Done" },
+    { name: "Ayush Gupta", fatherName: "Kuber Prasad Gupta", course: "Basic", status: "Running" },
+    { name: "Danyana", fatherName: "Santosh Singh", course: "ADCA", status: "Done" },
+    { name: "Diksha Tiwari", fatherName: "Brijanand Tiwari", course: "ADCA", status: "Running" },
+    { name: "Dimpal Yadav", fatherName: "Jawahar Yadav", course: "ADCA", status: "Done" },
+    { name: "Dhanjee Yadav", fatherName: "Kuber Yadav", course: "ADCA", status: "Running" },
+    { name: "Honey Singh", fatherName: "Pramod Singh", course: "ADCA", status: "Running" },
+    { name: "Jaya Singh", fatherName: "Ashok Singh", course: "DCA", status: "Running" },
+    { name: "Jhabalu Prasad", fatherName: "Sanjay Prasad", course: "ADCA", status: "Running" },
+    { name: "Jayprakash Yadav", fatherName: "Shiv Kumar Yadav", course: "ADCA", status: "Running" },
+    { name: "Khushi Verma", fatherName: "Shantash Verma", course: "ADCA", status: "Running" },
+    { name: "Khushboo", fatherName: "Umesh Yadav", course: "ADCA", status: "Done" },
+    { name: "Kumari Antima", fatherName: "Laljawahar Rajbhar", course: "ADCA", status: "Running" },
+    { name: "Manohar Kumar", fatherName: "Shyam Lal Ram", course: "ADCA", status: "Running" },
+    { name: "Mrityunjay Kumar", fatherName: "Manoj Kumar Ram", course: "ADCA", status: "Running" },
+    { name: "Nishant Ashish", fatherName: "Bajarangi Ram", course: "ADCA", status: "Running" },
+    { name: "Nisha Gupta", fatherName: "Chandan Gupta", course: "ADCA", status: "Done" },
+    { name: "Neha", fatherName: "Gopal Prasad", course: "ADCA", status: "Running" },
+    { name: "Neha Kumari", fatherName: "Kamlesh Ram", course: "ADCA", status: "Done" },
+    { name: "Pawan Kumar", fatherName: "Suryabhan Rajbhar", course: "ADCA", status: "Running" },
+    { name: "Pratibha", fatherName: "Ram Mohan Ram", course: "ADCA", status: "Done" },
+    { name: "Priya Yadav", fatherName: "Shanti Devi", course: "Basic", status: "Done" },
+    { name: "Priyanka", fatherName: "Raju Thakur", course: "ADCA", status: "Done" },
+    { name: "Raja Babu", fatherName: "Awadesh Yadav", course: "ADCA", status: "Done" },
+    { name: "Rani Kumari", fatherName: "Shashikant Gond", course: "ADCA", status: "Running" },
+    { name: "Rani Kumari", fatherName: "Manohar Ram", course: "ADCA", status: "Done" },
+    { name: "Ranjana", fatherName: "Ashok Кumar", course: "D.C.A", status: "Running" },
+    { name: "Ranjana", fatherName: "Santosh Singh", course: "ADCA", status: "Done" },
+    { name: "Sarita", fatherName: "Munna Ram", course: "ADCA", status: "Done" },
+    { name: "Sonam Yadav", fatherName: "Surendra Yadav", course: "ADCA", status: "Running" },
+    { name: "Srishti Singh", fatherName: "Ashok Singh", course: "D.C.A", status: "Running" },
+    { name: "Sunaina Sonu", fatherName: "Sonu Kumar Singh", course: "Basic", status: "Done" },
+    { name: "Sweta", fatherName: "Vidya Sagar", course: "ADCA", status: "Done" },
+    { name: "Ujala", fatherName: "Arvind Singh", course: "NDCA", status: "Done" },
+    { name: "Viranjana Kumari", fatherName: "Gulab Prasad", course: "CCC", status: "Done" },
+    { name: "Yash Gupta", fatherName: "Manoj Gupta", course: "Basic", status: "Done" }
+];
+
+
+
+    let filteredStudents = [...students];  // This will hold the filtered list of students
+    const studentsPerPage = 10;
+    let currentPage = 1;
+
+    // Function to display the students
+    function displayStudents() {
+        const tableBody = document.getElementById('studentTableBody');
+        const startIndex = (currentPage - 1) * studentsPerPage;
+        const endIndex = startIndex + studentsPerPage;
+        const currentStudents = filteredStudents.slice(startIndex, endIndex);
+
+        // Clear previous rows
+        tableBody.innerHTML = '';
+
+        // Add new rows
+        currentStudents.forEach(student => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${student.name}</td>
+                <td>${student.fatherName}</td>
+                <td>${student.course}</td>
+                <td>${student.status}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+        // Update pagination
+        updatePagination();
+    }
+
+    // Function to create pagination buttons
+    function updatePagination() {
+        const pagination = document.getElementById('pagination');
+        const totalPages = Math.ceil(filteredStudents.length / studentsPerPage);
+        pagination.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement('button');
+            button.textContent = i;
+            button.onclick = function() {
+                currentPage = i;
+                displayStudents();
+            };
+            if (i === currentPage) {
+                button.style.backgroundColor = '#0056b3';
+                button.style.color = 'white';
+            }
+            pagination.appendChild(button);
+        }
+    }
+
+    // Search function to filter the students
+    function searchStudents() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        filteredStudents = students.filter(student => {
+            return student.name.toLowerCase().includes(searchInput) ||
+                   student.fatherName.toLowerCase().includes(searchInput) ||
+                   student.course.toLowerCase().includes(searchInput) ||
+                   student.status.toLowerCase().includes(searchInput);
+        });
+
+        // Reset to the first page when the search query changes
+        currentPage = 1;
+        displayStudents();
+    }
+
+    // Initialize the table and pagination
+    displayStudents();
+
+</script>
+
+<!--------------------------- Footer -------------------------->
+
+<section class="footer">
+	<h4>About Us</h4>
+	<p>The word "Vector" refers to direct to a desired point founder of Vector Institute,
+	has the flair for teaching <br> and passion to mould a child in the professional field.</p>
+	<div class="icons">
+		<a href="https://www.youtube.com/@vectorclasses6061"><i class="fa fa-youtube-play" style="color:red"></i></a>
+		<a href="https://www.instagram.com/vectorclasses604?igsh=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a>
+		<a href="https://wa.me/918354838358text=Hello Vector classes"><i class="fa fa-whatsapp"></i></a>
+	</div>
+	<p>Made with <i class="fa fa-heart-o"></i> by Prateek Rai </p>
+</section>
+
+
+</body>
+</html>
+
