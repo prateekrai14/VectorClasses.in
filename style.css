@@ -319,7 +319,7 @@ p{
 /*-----------------------facilities----------------*/
 
 .facilities{
-	width: 80%;
+	width: 40%;
 	margin: auto;
 	text-align: center;
 	padding-top: 100px;
@@ -360,6 +360,50 @@ p{
         }
 }
 
+
+/*-----------------------facilities_cource----------------*/
+
+.facilities_cource{
+	width: 81%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+
+.facilities_cource-col{
+	flex-basis: 31%;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	text-align: left;
+}
+
+.facilities_cource-col img{
+	width: 350px;
+	height: 400px;
+	overflow;
+	border-radius:10px;
+}
+
+.facilities_cource-col p{
+	padding:0;
+}
+
+.facilities_cource-col h3{
+	margin-top:16px;
+	margin-bottom:15px;
+	text-align: left;
+	
+}
+
+@media(max-width: 700px){
+
+    .facilities_cource-col img{
+	        width: 250px;
+	        height: 300px;
+	        overflow;
+	        border-radius:10px;
+        }
+}
 /*------------------------ testimonials -----------------*/
 
 
